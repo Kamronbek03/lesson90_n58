@@ -3,26 +3,65 @@
 @tailwind utilities;
 
 /* Dark Mode Styles */
-.dark {
+html.dark body {
   --background-color: #202c36;
   --header-background-color: #2b3844;
   --card-background-color: #2b3844;
   --text-color: #fff;
 }
 
-body.dark {
+html.dark body {
   background-color: var(--background-color);
 }
 
-header.dark {
-  background-color: var(--header-background-color);
-  box-shadow: 0px 2px 4px 0px #0000000e;
+header {
+  background-color: white;
 }
 
-.bg-white.dark {
+html.dark header {
+  background-color: var(--header-background-color);
+  color: var(--text-color);
+}
+
+html.dark .bg-white {
   background-color: var(--card-background-color);
 }
 
-.text-gray-800.dark {
+html.dark .text-gray-800 {
   color: var(--text-color);
+}
+
+html.dark .container {
+  background-color: var(--background-color);
+}
+
+/* Ensure Full Height in Dark Mode */
+html.dark .min-h-screen {
+  background-color: var(--background-color);
+}
+
+/* Input and Select Styling */
+input,
+select {
+  border: none;
+  outline: none;
+}
+
+input::placeholder,
+select::placeholder {
+  color: #6b7280; /* Tailwind's gray-500 */
+}
+
+html.dark input::placeholder,
+html.dark select::placeholder {
+  color: #d1d5db; /* Tailwind's gray-300 */
+}
+
+/* Search Icon and Placeholder */
+.relative input:focus + .absolute {
+  display: none;
+}
+
+html.dark input:focus + .absolute {
+  display: none;
 }
